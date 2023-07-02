@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+@import url('sections/header.css');
+@import url('sections/hero.css');
+@import url('sections/about.css');
+@import url('sections/popular.css');
+@import url('sections/trending.css');
+@import url('sections/subscribe.css');
+@import url('sections/footer.css');
+
+/* CSS variables for reusability across all files */
+:root {
+  --playfair-display: 'Playfair Display', serif;
+  --plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+
+  --primary-color: #b1454a;
+  --secondary-color: #121212;
+
+  --black-200: #020202;
+  --black-300: #333333;
+  --black-400: #1f1e31;
+  --black-500: #555555;
+  --gray-100: #888888;
+
+  --color-white: #fff;
+  --color-crimson: #fff0de;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: var(--color-crimson);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sushi__subtitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: var(--plus-jakarta-sans);
+  color: var(--primary-color);
+  opacity: 0.8;
+  letter-spacing: -0.01em;
+}
+
+.sushi__title {
+  font-size: 4rem;
+  font-weight: 600;
+  font-family: var(--playfair-display);
+  color: var(--secondary-color);
+  margin-top: 1rem;
+}
+
+.sushi__description {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: var(--plus-jakarta-sans);
+  line-height: 2.25rem;
+  letter-spacing: -0.01em;
+
+  color: var(--secondary-color);
+  opacity: 0.8;
+
+  margin: 2rem 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sushi__hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sushi__hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* START: about us media queries */
+@media (max-width: 1024px) {
+  .about-us {
+    flex-direction: column;
+  }
+
+  .about-us__image {
+    flex-direction: row;
+  }
+
+  .about-us__image-sushi3 {
+    border-bottom: none;
+    border-right: 8px solid var(--color-crimson);
+  }
+
+  .about-us__button {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .about-us__image {
+    flex-direction: column;
+  }
+
+  .about-us__image-sushi3 {
+    border-bottom: 8px solid var(--color-crimson);
+    border-right: none;
+  }
+
+  .about-us__button {
+    display: block;
+    top: 47%;
+  }
+}
+
+@media (max-width: 550px) {
+  .about-us__image-sushi2 img,
+  .about-us__image-sushi3 img {
+    width: 50%;
+    height: 160px;
+
+    object-fit: contain;
+  }
+
+  .about-us__image div {
+    padding: 2rem;
+  }
+
+  .about-us__button {
+    top: 44%;
+  }
+
+  .about-us__content {
+    padding: 2rem;
+  }
+}
+/* END: about us media queries */
+
+/* START: header media queries */
+@media (max-width: 900px) {
+  .header__nav {
+    background: var(--primary-color);
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .header__menu-mobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 550px) {
+  .header__logo {
+    padding-left: 0;
+  }
+}
+/* END: header media queries */
+
+/* START: hero media queries */
+@media (max-width: 1060px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-image img {
+    width: 100%;
+    transform: matrix(1, 0.05, 0, 1.25, 0, 0) !important;
+  }
+}
+
+@media (max-width: 750px) {
+  .hero-image h2 {
+    font-size: 4.375rem;
+    line-height: 3.75rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero-image h2 {
+    font-size: 2.5rem;
+    line-height: 3.75rem;
+  }
+
+  .hero-content-info {
+    padding: 2rem;
+  }
+
+  .hero-content-info h1 {
+    font-size: 3.75rem;
+  }
+
+  .hero-content-info p {
+    margin: 2rem 0;
+  }
+
+  .hero-content__buttons {
+    margin: 2.5625rem 0;
+  }
+
+  .hero-content__testimonial {
+    padding: 2rem;
+  }
+}
+/* END: hero media queries */
+
+/* START: popular media queries */
+@media (max-width: 550px) {
+  .popular-foods {
+    padding: 4rem 2rem;
+  }
+
+  .popular-foods__card,
+  .popular-foods__card.active-card {
+    min-width: 100%;
+  }
+}
+/* END: popular media queries */
+
+/* START: subscribe media queries */
+@media (max-width: 550px) {
+  .subscription {
+    padding: 4rem 2rem;
+  }
+
+  .subscription h2 {
+    font-size: 4.25rem;
+    line-height: 6.25rem;
+  }
+
+  .subscription__form {
+    flex-direction: column;
+    gap: 20px;
+
+    min-width: 100%;
+    border-radius: 20px;
+    padding: 0;
+
+    border: none;
+  }
+
+  .subscription__form input {
+    min-height: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    border-radius: 30px;
+  }
+
+  .subscription__form button {
+    min-width: 100%;
+  }
+}
+/* END: subscribe media queries */
+
+/* START: trending media queries */
+@media (max-width: 1024px) {
+  .trending-sushi {
+    flex-direction: column;
+  }
+
+  .trending-drink {
+    flex-direction: column-reverse;
+  }
+
+  .trending__image {
+    width: 100%;
+    background-size: cover;
+  }
+
+  .trending__discover {
+    display: none;
+  }
+
+  .trending__arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .trending__image img {
+    width: 70%;
+    height: 70%;
+  }
+
+  .trending__content {
+    padding: 2rem;
+  }
+}
+/* END: trending media queries */
